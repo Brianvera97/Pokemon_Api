@@ -5,7 +5,7 @@ const App = () => {
   const [pokemonList, setPokemonList] = useState([]);
 
   const handleClick = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=807&offset=0")
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -24,7 +24,7 @@ const App = () => {
     <>
       <button type="button" onClick={handleClick}>Fetch Pokemon</button>
 
-      {/* Muestra la lista de nombres de Pokémon */}
+      
       <ul>
         {pokemonList.map((pokemon, index) => (
           <li key={index}>{pokemon.name}</li>
